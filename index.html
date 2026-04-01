@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moisés Aguilar</title>
-        <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-            <script>
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -21,9 +22,10 @@
     </script>
 
 </head>
+
 <body class="bg-blue-900">
 
-     <div class="relative h-screen bg-[url('assets/images/background.png')] bg-cover bg-center">
+    <div class="relative h-screen bg-[url('assets/images/background.png')] bg-cover bg-center">
         <!-- OVERLAY -->
         <div class="absolute inset-0 bg-bluePrimary/70"></div>
 
@@ -56,8 +58,6 @@
                     </div>
 
                 </div>
-
-                <!-- MENU MOBILE (overlay bonito) -->
                 <div id="menu"
                     class="hidden flex-col absolute top-16 left-0 w-full bg-bluePrimary/95 backdrop-blur-lg p-6 space-y-4 md:hidden">
 
@@ -72,8 +72,6 @@
                     </a>
                 </div>
 
-
-
                 <script>
                     const btn = document.getElementById('menu-btn');
                     const menu = document.getElementById('menu');
@@ -81,7 +79,7 @@
                     btn.addEventListener('click', () => {
                         menu.classList.toggle('hidden');
                     });
-                </script>
+                </script> <!-- depois colocar num arquivo.js-->
 
             </nav>
         </header>
@@ -90,14 +88,11 @@
 
             <div class="flex flex-col lg:flex-row items-stretch gap-10 max-w-6xl w-full">
 
-                <!-- ESQUERDA -->
                 <div class="flex flex-col justify-between items-center lg:items-start">
 
-                    <!-- IMAGEM MAIOR -->
                     <img src="assets/images/profile.jpg"
                         class="w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-full shadow-lg aspect-square">
 
-                    <!-- BOTÕES (AGORA COLADOS NA BASE) -->
                     <div class="flex flex-col items-center lg:items-start mt-6">
                         <button
                             class="bg-white/20 border border-white/60 w-60 rounded-2xl hover:bg-white/30 text-white py-2">
@@ -111,11 +106,10 @@
 
                 </div>
 
-                <!-- DIREITA -->
                 <div class="flex flex-col justify-between w-full max-w-4xl text-center lg:text-left">
 
                     <div>
-                        <!-- TÍTULO -->
+
                         <h1 class="text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-tight">
                             Segurança do Trabalho e
                             <span class="text-greenPrimary underline underline-offset-4">
@@ -126,7 +120,8 @@
 
                         <!-- DESCRIÇÃO -->
                         <p class="mt-6 text-lg text-gray-300">
-                            Assessoria completa e treinamentos normativos para sua empresa. Garanta conformidade e segurança com quem entende do assunto.
+                            Assessoria completa e treinamentos normativos para sua empresa. Garanta conformidade e
+                            segurança com quem entende do assunto.
                         </p>
                     </div>
 
@@ -159,39 +154,27 @@
                                 <p class="mt-2 text-gray-600 font-semibold text-sm">
                                     Empresas atendidas
                                 </p>
-                            </div>
-
+                           </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
 
             <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
 
-    <a href="#saiba-mais" class="flex flex-col items-center text-white animate-bounce">
-        
-        <span class="text-sm mt-1">Saiba mais</span>
+                <a href="#saiba-mais" class="flex flex-col items-center text-white animate-bounce">
 
-        <!-- Ícone seta -->
-        <svg xmlns="http://www.w3.org/2000/svg" 
-            class="w-8 h-8"
-            fill="none" 
-            viewBox="0 0 24 24" 
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M19 9l-7 7-7-7"/>
-        </svg>
+                    <span class="text-sm mt-1">Saiba mais</span>
 
-    </a>
-</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
 
+                </a>
+          </div>
         </div>
-
-
-
-
     </div>
 </body>
+
 </html>
