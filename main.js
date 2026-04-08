@@ -4,7 +4,7 @@ function mudarPagina(num) {
     const p2 = document.getElementById('pagina-2');
     const p3 = document.getElementById('pagina-3');
 
-    
+
     // 2. Pega os botões para mudar o estilo visual
     const btn1 = document.getElementById('btn-1');
     const btn2 = document.getElementById('btn-2');
@@ -16,7 +16,7 @@ function mudarPagina(num) {
         p1.classList.remove('hidden');
         p2.classList.add('hidden');
         p3.classList.add('hidden');
-        
+
         // Ativa botão 1, desativa botão 2
         btn1.className = "w-10 h-10 rounded-lg bg-bluePrimary text-white font-bold shadow-md";
         btn2.className = "w-10 h-10 rounded-lg bg-white border border-gray-200 text-gray-600";
@@ -27,7 +27,7 @@ function mudarPagina(num) {
         p1.classList.add('hidden');
         p2.classList.remove('hidden');
         p3.classList.add("hidden")
-        
+
         // Ativa botão 2, desativa botão 1
         btn2.className = "w-10 h-10 rounded-lg bg-bluePrimary text-white font-bold shadow-md";
         btn1.className = "w-10 h-10 rounded-lg bg-white border border-gray-200 text-gray-600";
@@ -38,31 +38,65 @@ function mudarPagina(num) {
         p1.classList.add('hidden');
         p3.classList.remove('hidden');
         p2.classList.add("hidden")
-        
+
         // Ativa botão 2, desativa botão 1
         btn3.className = "w-10 h-10 rounded-lg bg-bluePrimary text-white font-bold shadow-md";
         btn1.className = "w-10 h-10 rounded-lg bg-white border border-gray-200 text-gray-600";
         btn2.className = "w-10 h-10 rounded-lg bg-white border border-gray-200 text-gray-600";
     }
-    
+
 
 }
 
+function abrirModal(titulo, carga, descricao) {
+    const modal = document.getElementById("modal");
+    const content = document.getElementById("modal-content");
 
+    document.getElementById("modal-titulo").innerText = titulo;
 
-                const btn = document.getElementById('menu-btn');
-                const menu = document.getElementById('menu');
-                const menuIcon = document.getElementById('menu-icon');
-                const links = document.querySelectorAll('.mobile-link');
+    document.getElementById("modal-texto").innerHTML = `
+        <p class="mb-3">
+            <strong>Carga horária:</strong><br>
+            ${carga}
+        </p>
 
-                btn.addEventListener('click', () => {
-                    const isHidden = menu.classList.toggle('hidden');
-                    menuIcon.innerText = isHidden ? '☰' : '✕';
-                });
+        <p>
+            <strong>Descrição:</strong><br>
+            ${descricao}
+        </p>
+    `;
 
-                links.forEach(link => {
-                    link.addEventListener('click', () => {
-                        menu.classList.add('hidden');
-                        menuIcon.innerText = '☰';
-                    });
-                });
+    modal.classList.remove("opacity-0", "pointer-events-none");
+    content.classList.remove("scale-95");
+
+    modal.classList.add("opacity-100");
+    content.classList.add("scale-100");
+}
+
+function fecharModal() {
+    const modal = document.getElementById("modal");
+    const content = document.getElementById("modal-content");
+
+    modal.classList.add("opacity-0", "pointer-events-none");
+    content.classList.add("scale-95");
+
+    modal.classList.remove("opacity-100");
+    content.classList.remove("scale-100");
+}
+
+const btn = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
+const menuIcon = document.getElementById('menu-icon');
+const links = document.querySelectorAll('.mobile-link');
+
+btn.addEventListener('click', () => {
+    const isHidden = menu.classList.toggle('hidden');
+    menuIcon.innerText = isHidden ? '☰' : '✕';
+});
+
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        menuIcon.innerText = '☰';
+    });
+});
