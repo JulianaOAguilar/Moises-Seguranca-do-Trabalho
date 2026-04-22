@@ -100,3 +100,32 @@ links.forEach(link => {
         menuIcon.innerText = '☰';
     });
 });
+
+function mudarPaginaGaleria(num) {
+    // 1. Pega as páginas da galeria
+    const pg1 = document.getElementById('galeria-pagina-1');
+    const pg2 = document.getElementById('galeria-pagina-2');
+
+    // 2. Pega os botões da galeria
+    const btnG1 = document.getElementById('btn-g-1');
+    const btnG2 = document.getElementById('btn-g-2');
+
+    if (num === 1) {
+        // Mostra pag 1, esconde pag 2
+        pg1.classList.remove('hidden');
+        pg2.classList.add('hidden');
+
+        // Ativa botão 1 (Estilo idêntico ao seu btn-1), desativa botão 2
+        btnG1.className = "w-10 h-10 rounded-lg bg-bluePrimary text-white font-bold shadow-md";
+        btnG2.className = "w-10 h-10 rounded-lg bg-white border border-gray-200 text-gray-600";
+
+    } else {
+        // Mostra pag 2, esconde pag 1
+        pg1.classList.add('hidden');
+        pg2.classList.remove('hidden');
+
+        // Ativa botão 2, desativa botão 1
+        btnG2.className = "w-10 h-10 rounded-lg bg-bluePrimary text-white font-bold shadow-md";
+        btnG1.className = "w-10 h-10 rounded-lg bg-white border border-gray-200 text-gray-600";
+    }
+}
